@@ -1,22 +1,34 @@
-# LangChain 中文文档（非官方）
+﻿# LangChain 中文文档
 
 > 在线阅读：https://hisn00w.github.io/LangChain-Chinese/
 >
 > 原站：https://docs.langchain.com/
-> 
+>
 > 如有不一致，请以英文原文为准。
 
-## 📖 关于本项目
+## 📘 关于本项目
 
 这是 LangChain 官方文档的中文翻译项目，旨在帮助中文用户更好地学习和使用 LangChain。
 
+### ✨ 项目特点
+
+- 持续同步官方文档结构，降低学习门槛
+- 保留原文的技术术语与代码示例
+- 提供清晰的文档导航与章节划分
+
 ## 🚀 快速开始
 
-请选择左侧目录开始阅读，推荐从以下章节开始：
+请从左侧目录开始阅读，推荐从以下章节入门：
 
 - [概览](overview.md) - 了解 LangChain 是什么
-- [快速开始](get-started/quickstart.md) - 5分钟快速上手
-- [安装指南](get-started/install.md) - 安装配置说明
+- [快速开始](get-started/quickstart.md) - 5 分钟快速上手
+- [安装指南](get-started/install.md) - 安装与配置说明
+
+## 🧭 阅读建议
+
+- 若对 LangChain 完全陌生，建议按“概览 → 快速开始 → 安装指南”的顺序阅读
+- 若已有基础，可直接按模块进入 Core Components 或 Advanced Usage
+- 发现翻译不一致或遗漏时，请以英文原文为准
 
 ## 📚 文档结构
 
@@ -61,7 +73,7 @@
 
 ## 🤝 贡献指南
 
-欢迎参与文档翻译和改进！
+欢迎参与文档翻译和改进。
 
 ### 如何贡献
 
@@ -75,7 +87,7 @@
 
 - 保持术语一致性
 - 保留代码示例中的英文注释
-- 确保链接有效性
+- 确保链接有效
 - 遵循 Markdown 格式规范
 
 ## 📝 许可证
@@ -89,10 +101,10 @@
 - [LangChain Python 文档](https://python.langchain.com/)
 - [LangSmith 平台](https://smith.langchain.com/)
 
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Hisn00w/LangChain-Chinese&type=Date)](https://star-history.com/#Hisn00w/LangChain-Chinese&Date)
+
 ## ⚠️ 免责声明
 
 本项目为非官方翻译，仅供学习参考使用。翻译内容可能存在不准确或滞后，遇到疑问请以英文原文为准。
-
----
-
-**开始阅读** → [概览](overview.md)
