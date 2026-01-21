@@ -371,6 +371,7 @@ export function BranchSwitcher({
 使用 @[`createAgent`] 时，工具调用类型会自动从您注册到智能体的工具中推断：
 
 ```python
+import json
 from langchain import create_agent, tool
 
 @tool
@@ -486,7 +487,7 @@ from langchain import create_agent, tool
 @tool
 def get_weather(location: str) -> str:
     """获取当前位置的天气。"""
-    return f'{{"status": "success", "content": "{location}天气: 晴天, 22°C"}}'
+  return json.dumps({"status": "success", "content": f"{location}天气: 晴天, 22°C"})
 
 agent = create_agent(
     model="openai:gpt-4o-mini",
@@ -698,7 +699,7 @@ function CustomStreamingUI() {
           <div className="w-full bg-neutral-700 rounded-full h-2">
             <div
               className="bg-blue-500 h-2 rounded-full transition-all"
-              style={{ width: `${data.progress}%` }}
+              style={ { width: `${data.progress}%` } }
             />
           </div>
         </div>
