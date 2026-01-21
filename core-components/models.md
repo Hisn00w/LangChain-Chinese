@@ -1,4 +1,4 @@
-# Models（模型）
+﻿# Models（模型）
 
 [LLMs（大型语言模型）](https://en.wikipedia.org/wiki/Large_language_model) 是强大的 AI 工具，可以像人类一样解释和生成文本。它们用途广泛，可以编写内容、翻译语言、总结和回答问题，无需针对每项任务进行专门训练。
 
@@ -15,7 +15,7 @@
 
 LangChain 的标准模型接口让你可以访问许多不同的 provider 集成，这使得你可以轻松试验和切换模型，找到最适合你用例的模型。
 
-有关特定于 provider 的集成信息和功能，请参阅 provider 的[对话模型页面](./integrations/chat)。
+有关特定于 provider 的集成信息和功能，请参阅 provider 的[对话模型页面(https://docs.langchain.com/oss/python/integrations/chat)。
 
 ## 基本用法
 
@@ -32,7 +32,7 @@ LangChain 的标准模型接口让你可以访问许多不同的 provider 集成
 
 **OpenAI**
 
-请阅读 [OpenAI 对话模型集成文档](./integrations/chat/openai)。
+请阅读 [OpenAI 对话模型集成文档(https://docs.langchain.com/oss/python/integrations/chat/openai)。
 
 ```bash
 pip install -U "langchain[openai]"
@@ -60,7 +60,7 @@ model = ChatOpenAI(model="gpt-4.1")
 
 **Anthropic**
 
-请阅读 [Anthropic 对话模型集成文档](./integrations/chat/anthropic)。
+请阅读 [Anthropic 对话模型集成文档(https://docs.langchain.com/oss/python/integrations/chat/anthropic)。
 
 ```bash
 pip install -U "langchain[anthropic]"
@@ -88,7 +88,7 @@ model = ChatAnthropic(model="claude-sonnet-4-5-20250929")
 
 **Azure**
 
-请阅读 [Azure 对话模型集成文档](./integrations/chat/azure_chat_openai)。
+请阅读 [Azure 对话模型集成文档(https://docs.langchain.com/oss/python/integrations/chat/azure_chat_openai)。
 
 ```bash
 pip install -U "langchain[openai]"
@@ -126,7 +126,7 @@ model = AzureChatOpenAI(
 
 **Google Gemini**
 
-请阅读 [Google GenAI 对话模型集成文档](./integrations/chat/google_generative_ai)。
+请阅读 [Google GenAI 对话模型集成文档(https://docs.langchain.com/oss/python/integrations/chat/google_generative_ai)。
 
 ```bash
 pip install -U "langchain[google-genai]"
@@ -154,7 +154,7 @@ model = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 
 **AWS Bedrock**
 
-请阅读 [AWS Bedrock 对话模型集成文档](./integrations/chat/bedrock)。
+请阅读 [AWS Bedrock 对话模型集成文档(https://docs.langchain.com/oss/python/integrations/chat/bedrock)。
 
 ```bash
 pip install -U "langchain[aws]"
@@ -182,7 +182,7 @@ model = ChatBedrock(model="anthropic.claude-3-5-sonnet-20240620-v1:0")
 
 **HuggingFace**
 
-请阅读 [HuggingFace 对话模型集成文档](./integrations/chat/huggingface)。
+请阅读 [HuggingFace 对话模型集成文档(https://docs.langchain.com/oss/python/integrations/chat/huggingface)。
 
 ```bash
 pip install -U "langchain[huggingface]"
@@ -226,7 +226,7 @@ response = model.invoke("为什么鹦鹉会说话？")
 
 ### 支持的模型
 
-LangChain 支持所有主要的模型 provider，包括 OpenAI、Anthropic、Google、Azure、AWS Bedrock 等。每个 provider 提供各种具有不同能力的模型。LangChain 中支持模型的完整列表，请参阅[集成页面](./integrations/providers/overview)。
+LangChain 支持所有主要的模型 provider，包括 OpenAI、Anthropic、Google、Azure、AWS Bedrock 等。每个 provider 提供各种具有不同能力的模型。LangChain 中支持模型的完整列表，请参阅[集成页面(https://docs.langchain.com/oss/python/integrations/providers/overview)。
 
 ### 核心方法
 
@@ -234,7 +234,7 @@ LangChain 支持所有主要的模型 provider，包括 OpenAI、Anthropic、Goo
 - **Stream** - 调用模型，但实时流式输出生成的内容
 - **Batch** - 批量向模型发送多个请求以提高处理效率
 
-除了对话模型外，LangChain 还支持其他相邻技术，如嵌入模型和向量存储。详情请参阅[集成页面](./integrations/providers/overview)。
+除了对话模型外，LangChain 还支持其他相邻技术，如嵌入模型和向量存储。详情请参阅[集成页面(https://docs.langchain.com/oss/python/integrations/providers/overview)。
 
 ## 参数
 
@@ -273,7 +273,7 @@ model = init_chat_model(
 
 例如，`ChatOpenAI` 有 `use_responses_api` 来决定使用 OpenAI Responses 还是 Completions API。
 
-要查找给定对话模型支持的所有参数，请前往[对话模型集成](./integrations/chat)页面。
+要查找给定对话模型支持的所有参数，请前往[对话模型集成(https://docs.langchain.com/oss/python/integrations/chat)页面。
 
 ---
 
@@ -467,7 +467,7 @@ sequenceDiagram
 
 要使你定义的工具可供模型使用，必须使用 `bind_tools` 绑定它们。在后续调用中，模型可以根据需要选择调用任何绑定的工具。
 
-一些模型 provider 提供可以通过模型或调用参数启用的内置工具（例如 `ChatOpenAI`、`ChatAnthropic`）。请查看相应的 [provider 参考](./integrations/providers/overview) 了解详情。
+一些模型 provider 提供可以通过模型或调用参数启用的内置工具（例如 `ChatOpenAI`、`ChatAnthropic`）。请查看相应的 [provider 参考(https://docs.langchain.com/oss/python/integrations/providers/overview) 了解详情。
 
 请参阅[工具指南](./tools.md)了解创建工具的详情和其他选项。
 
@@ -669,7 +669,7 @@ print(response)
 - **包含原始数据**：设置 `include_raw=True` 以同时获取解析后的输出和原始 AI 消息
 - **验证**：Pydantic 模型提供自动验证。`TypedDict` 和 JSON Schema 需要手动验证
 
-请查看你的 [provider 的集成页面](./integrations/providers/overview) 了解支持的方法和配置选项。
+请查看你的 [provider 的集成页面(https://docs.langchain.com/oss/python/integrations/providers/overview) 了解支持的方法和配置选项。
 
 **示例：同时返回消息输出和解析结构**
 
@@ -760,7 +760,7 @@ model.profile
 
 模型配置文件数据允许应用程序动态处理模型能力。例如：
 
-1. [摘要中间件](./middleware-overview.md#摘要) 可以根据模型的上下文窗口大小触发摘要
+1. [摘要中间件](../middleware/overview.md#摘要) 可以根据模型的上下文窗口大小触发摘要
 2. `create_agent` 中的[结构化输出](./structured-output.md)策略可以自动推断（例如，通过检查对原生结构化输出功能的支持）
 3. 可以根据支持的[模态](#多模态)和最大输入 token 来限制模型输入
 
@@ -790,12 +790,12 @@ model.model_copy(update={"profile": new_profile})
 
 **选项 2（上游修复）**
 
-数据的主要来源是 [models.dev](https://models.dev/) 项目。这些数据与 LangChain [集成包](./integrations/providers/overview)中的附加字段和覆盖合并，并与这些包一起发布。
+数据的主要来源是 [models.dev](https://models.dev/) 项目。这些数据与 LangChain [集成包(https://docs.langchain.com/oss/python/integrations/providers/overview)中的附加字段和覆盖合并，并与这些包一起发布。
 
 模型配置文件数据可以通过以下过程更新：
 
 1（如需要）在 [models.dev](https://models.dev/) 通过向其 [GitHub 仓库](https://github.com/sst/models.dev) 发送 pull request 来更新源数据
-2（如需要）在 `langchain_<package>/data/profile_augmentations.toml` 中更新附加字段和覆盖，通过向 LangChain [集成包](./integrations/providers/overview) 发送 pull request
+2（如需要）在 `langchain_<package>/data/profile_augmentations.toml` 中更新附加字段和覆盖，通过向 LangChain [集成包(https://docs.langchain.com/oss/python/integrations/providers/overview) 发送 pull request
 3. 使用 `langchain-model-profiles` CLI 工具从 [models.dev](https://models.dev/) 拉取最新数据，合并增强功能并更新配置文件数据：
 
 ```bash
@@ -842,7 +842,7 @@ print(response.content_blocks)
 # ]
 ```
 
-请参阅[集成页面](./integrations/providers/overview)了解特定 provider 的详情。
+请参阅[集成页面(https://docs.langchain.com/oss/python/integrations/providers/overview)了解特定 provider 的详情。
 
 ### 推理
 
@@ -864,13 +864,13 @@ print(" ".join(step["reasoning"] for step in reasoning_steps))
 
 根据模型，有时你可以指定模型应该在推理中投入的努力级别。同样，你可以请求模型完全关闭推理。这可能采用分类"层级"（例如 `low` 或 `high`）或整数 token 预算的形式。
 
-详情请参阅你的相应[集成页面](./integrations/providers/overview)或[参考](https://reference.langchain.com/python/integrations/)。
+详情请参阅你的相应[集成页面(https://docs.langchain.com/oss/python/integrations/providers/overview)或[参考](https://reference.langchain.com/python/integrations/)。
 
 ### 本地模型
 
 LangChain 支持在你自己的硬件上本地运行模型。这在数据隐私至关重要、你想要调用自定义模型，或希望避免使用云模型时产生成本的场景中很有用。
 
-[Ollama](./integrations/chat/ollama) 是在本地运行对话和嵌入模型的最简单方法之一。
+[Ollama(https://docs.langchain.com/oss/python/integrations/chat/ollama) 是在本地运行对话和嵌入模型的最简单方法之一。
 
 ### 提示词缓存
 
@@ -883,7 +883,7 @@ LangChain 支持在你自己的硬件上本地运行模型。这在数据隐私�
   - Gemini
   - AWS Bedrock
 
-提示词缓存通常仅在超过最小输入 token 阈值时才启动。请参阅 [provider 页面](./integrations/chat)了解详情。
+提示词缓存通常仅在超过最小输入 token 阈值时才启动。请参阅 [provider 页面(https://docs.langchain.com/oss/python/integrations/chat)了解详情。
 
 缓存使用情况将反映在模型响应的[使用元数据](./messages.md#token-使用情况)中。
 
@@ -939,7 +939,7 @@ response.content_blocks
 
 这代表单个对话轮次；没有需要传入的关联 `ToolMessage` 对象，就像客户端[工具调用](#tool-calling)中一样。
 
-请参阅你的给定 provider 的[集成页面](./integrations/chat)了解可用工具和使用详情。
+请参阅你的给定 provider 的[集成页面(https://docs.langchain.com/oss/python/integrations/chat)了解可用工具和使用详情。
 
 ### 速率限制
 
@@ -986,7 +986,7 @@ model = init_chat_model(
 )
 ```
 
-使用直接对话模型类实例化时，参数名称可能因 provider 而异。请查看相应的[参考](./integrations/providers/overview)了解详情。
+使用直接对话模型类实例化时，参数名称可能因 provider 而异。请查看相应的[参考(https://docs.langchain.com/oss/python/integrations/providers/overview)了解详情。
 
 **代理配置**
 
@@ -1001,7 +1001,7 @@ model = ChatOpenAI(
 )
 ```
 
-代理支持因集成而异。请查看特定模型 provider 的[参考](./integrations/providers/overview)了解代理配置选项。
+代理支持因集成而异。请查看特定模型 provider 的[参考(https://docs.langchain.com/oss/python/integrations/providers/overview)了解代理配置选项。
 
 ### 对数概率
 
@@ -1021,7 +1021,7 @@ print(response.response_metadata["logprobs"])
 
 许多 model provider 将 token 使用信息作为调用响应的一部分返回。当可用时，此信息将包含在相应模型生成的 `AIMessage` 对象上。更多详情请参阅[messages](./messages.md)指南。
 
-一些 provider API（特别是 OpenAI 和 Azure OpenAI 对话补全）要求用户在流式上下文中选择接收 token 使用数据。请参阅集成指南的[流式使用元数据](./integrations/chat/openai#流式使用元数据)部分了解详情。
+一些 provider API（特别是 OpenAI 和 Azure OpenAI 对话补全）要求用户在流式上下文中选择接收 token 使用数据。请参阅集成指南的[流式使用元数据(https://docs.langchain.com/oss/python/integrations/chat/openai#流式使用元数据)部分了解详情。
 
 你可以通过回调或上下文管理器跟踪应用程序中跨模型的聚合 token 计数，如下所示：
 
@@ -1203,3 +1203,4 @@ model_with_tools.invoke(
     config={"configurable": {"model": "claude-sonnet-4-5-20250929"}},
 ).tool_calls
 ```
+

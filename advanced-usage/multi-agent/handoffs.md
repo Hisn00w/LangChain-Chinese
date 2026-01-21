@@ -1,6 +1,6 @@
-# 交接
+﻿# 交接
 
-在**交接**架构中，行为根据状态动态变化。核心机制：[工具](/oss/python/langchain/tools)更新跨轮次持久化的状态变量（例如 `current_step` 或 `active_agent`），系统读取此变量来调整行为——应用不同的配置（系统提示、工具）或路由到不同的[智能体](/oss/python/langchain/agents)。此模式支持不同智能体之间的交接以及单个智能体内的动态配置更改。
+在**交接**架构中，行为根据状态动态变化。核心机制：[工具(https://docs.langchain.com/oss/python/langchain/tools)更新跨轮次持久化的状态变量（例如 `current_step` 或 `active_agent`），系统读取此变量来调整行为——应用不同的配置（系统提示、工具）或路由到不同的[智能体(https://docs.langchain.com/oss/python/langchain/agents)。此模式支持不同智能体之间的交接以及单个智能体内的动态配置更改。
 
 <Tip>
   **交接**一词由 [OpenAI](https://openai.github.io/openai-agents-python/handoffs/) 创造，用于使用工具调用（例如 `transfer_to_sales_agent`）在智能体或状态之间转移控制权。
@@ -40,7 +40,7 @@ sequenceDiagram
 
 ## 基本实现
 
-核心机制是一个[工具](/oss/python/langchain/tools)，它返回 [`Command`](/oss/python/langgraph/graph-api#command) 来更新状态，触发到新步骤或智能体的转换：
+核心机制是一个[工具(https://docs.langchain.com/oss/python/langchain/tools)，它返回 [`Command`(https://docs.langchain.com/oss/python/langgraph/graph-api#command) 来更新状态，触发到新步骤或智能体的转换：
 
 ```python
 from langchain.tools import tool
@@ -184,7 +184,7 @@ agent = create_agent(
 多个独立智能体作为图中的单独节点存在。交接工具使用 `Command.PARENT` 在智能体节点之间导航，以指定下一步执行哪个节点。
 
 <Warning>
-  子图交接需要仔细的[上下文工程](/oss/python/langchain/context-engineering)。与单智能体中间件（消息历史自然流动）不同，您必须明确决定哪些消息在智能体之间传递。如果处理不当，智能体会收到畸形的对话历史或膨胀的上下文。请参阅下面的[上下文工程](#上下文工程)。
+  子图交接需要仔细的[上下文工程(https://docs.langchain.com/oss/python/langchain/context-engineering)。与单智能体中间件（消息历史自然流动）不同，您必须明确决定哪些消息在智能体之间传递。如果处理不当，智能体会收到畸形的对话历史或膨胀的上下文。请参阅下面的[上下文工程](#上下文工程)。
 </Warning>
 
 ```python
@@ -369,7 +369,7 @@ for msg in result["messages"]:
 
 #### 上下文工程
 
-使用子图交接，您可以精确控制哪些消息在智能体之间流动。这种精确性对于维护有效的对话历史和避免可能使下游智能体混淆的上下文膨胀至关重要。关于此主题的更多信息，请参阅[上下文工程](/oss/python/langchain/context-engineering)。
+使用子图交接，您可以精确控制哪些消息在智能体之间流动。这种精确性对于维护有效的对话历史和避免可能使下游智能体混淆的上下文膨胀至关重要。关于此主题的更多信息，请参阅[上下文工程(https://docs.langchain.com/oss/python/langchain/context-engineering)。
 
 **处理交接期间的上下文**
 
@@ -420,4 +420,5 @@ def transfer_to_sales(runtime: ToolRuntime) -> Command:
 * **上下文过滤策略**：每个智能体是否接收完整的对话历史、过滤的部分或摘要？不同的智能体可能根据其角色需要不同的上下文。
 * **工具语义**：澄清交接工具是否仅更新路由状态或也执行副作用。例如，`transfer_to_sales()` 是否也应该创建支持工单，或者那应该是单独的操作？
 * **令牌效率**：平衡上下文完整性对抗令牌成本。随着对话变长，总结和选择性上下文传递变得更加重要。
+
 

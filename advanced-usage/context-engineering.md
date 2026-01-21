@@ -1,4 +1,4 @@
-# Agent 中的上下文工程
+﻿# Agent 中的上下文工程
 
 ## 概述
 
@@ -15,7 +15,7 @@
 
 **上下文工程**是以正确的格式提供正确的信息和工具，使 LLM 能够完成任务。这是 AI 工程师的首要工作。这种"正确"上下文的缺乏是实现更可靠 agent 的最大障碍，而 LangChain 的 agent 抽象经过独特设计，以促进上下文工程。
 
-不熟悉上下文工程？请从[概念概述](/oss/python/concepts/context)开始，了解不同类型的上下文以及何时使用它们。
+不熟悉上下文工程？请从[概念概述(https://docs.langchain.com/oss/python/concepts/context)开始，了解不同类型的上下文以及何时使用它们。
 
 ### Agent 循环
 
@@ -51,7 +51,7 @@
 
 ### 工作原理
 
-LangChain [中间件](/oss/python/langchain/middleware) 是使使用 LangChain 的开发者能够实际进行上下文工程的底层机制。
+LangChain [中间件(https://docs.langchain.com/oss/python/langchain/middleware) 是使使用 LangChain 的开发者能够实际进行上下文工程的底层机制。
 
 中间件允许您钩入 agent 生命周期的任何步骤，并：
 
@@ -679,7 +679,7 @@ agent = create_agent(
 
 控制**核心 agent 步骤之间**发生的情况 — 拦截数据流以实现跨领域关注，如总结、护栏和日志记录。
 
-正如您在[模型上下文](#模型上下文)和[工具上下文](#工具上下文)中所看到的，[中间件](/oss/python/langchain/middleware) 是使上下文工程可行的机制。中间件允许您钩入 agent 生命周期的任何步骤，并：
+正如您在[模型上下文](#模型上下文)和[工具上下文](#工具上下文)中所看到的，[中间件(https://docs.langchain.com/oss/python/langchain/middleware) 是使上下文工程可行的机制。中间件允许您钩入 agent 生命周期的任何步骤，并：
 
 1. **更新上下文** — 修改状态和存储以持久化更改，更新对话历史，或保存见解
 2. **在生命周期中跳转** — 根据上下文移动到 agent 循环中的不同步骤（例如，如果满足条件则跳过工具执行，使用修改后的上下文重复模型调用）
@@ -729,4 +729,5 @@ agent = create_agent(
 - [工具](../core-components/tools.md) — 工具创建和上下文访问
 - [记忆](long-term-memory.md) — 短期和长期记忆模式
 - [Agent](../core-components/agents.md) — 核心 agent 概念
+
 

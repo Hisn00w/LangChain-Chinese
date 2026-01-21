@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
@@ -20,10 +20,16 @@
       // 目录层级与展示设置
       subMaxLevel: 3,
       auto2top: true,
-      sidebarDisplayLevel: 3
+      sidebarDisplayLevel: 3,
+      // Mermaid 渲染
+      mermaidConfig: {
+        startOnLoad: true
+      }
     }
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2/dist/docsify-mermaid.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# 护栏
+﻿# 护栏
 
 > 为您的 agent 实现安全检查和内容过滤
 
@@ -12,7 +12,7 @@
 - 实施业务规则和合规要求
 - 验证输出质量和准确性
 
-您可以使用[中间件](/oss/python/langchain/middleware)实现护栏，以在战略点拦截执行 — 在 agent 开始之前、完成后，或在模型和工具调用周围。
+您可以使用[中间件(https://docs.langchain.com/oss/python/langchain/middleware)实现护栏，以在战略点拦截执行 — 在 agent 开始之前、完成后，或在模型和工具调用周围。
 
 护栏可以使用两种互补的方法实现：
 
@@ -94,7 +94,7 @@ result = agent.invoke({
 | `apply_to_output` | 在模型调用之后检查 AI 消息 | `False` |
 | `apply_to_tool_results` | 在执行后检查工具结果消息 | `False` |
 
-有关 PII 检测功能的完整详细信息，请参阅[中间件文档](/oss/python/langchain/middleware#pii-detection)。
+有关 PII 检测功能的完整详细信息，请参阅[中间件文档(https://docs.langchain.com/oss/python/langchain/middleware#pii-detection)。
 
 ### 人工介入
 
@@ -142,7 +142,7 @@ result = agent.invoke(
 )
 ```
 
-有关实施批准工作流程的完整详细信息，请参阅[人工介入文档](/oss/python/langchain/human-in-the-loop)。
+有关实施批准工作流程的完整详细信息，请参阅[人工介入文档(https://docs.langchain.com/oss/python/langchain/human-in-the-loop)。
 
 ## 自定义护栏
 
@@ -404,4 +404,5 @@ agent = create_agent(
 - [中间件 API 参考](https://reference.langchain.com/python/langchain/middleware/) — 自定义中间件的完整指南
 - [人工介入](human-in-the-loop.md) — 为敏感操作添加人工审查
 - [测试 agent](../agent-development/test.md) — 测试安全机制的策略
+
 

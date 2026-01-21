@@ -1,4 +1,4 @@
-# LangSmith 部署
+﻿# LangSmith 部署
 
 当您准备好将 LangChain 智能体部署到生产环境时，LangSmith 提供了一个专为智能体工作负载设计的托管托管平台。传统的托管平台是为无状态的、短期运行的 Web 应用程序构建的，而 LangGraph 是**专门为需要持久状态和后台执行的有状态的、长时间运行的智能体构建的**。LangSmith 处理基础设施、扩展和运营问题，因此您可以直接从仓库部署。
 
@@ -13,7 +13,7 @@
 
 ### 1. 在 GitHub 上创建仓库
 
-您的应用程序代码必须位于 GitHub 仓库中才能在 LangSmith 上部署。公共和私有仓库都支持。对于此快速入门，首先确保您的应用通过遵循[本地服务器设置指南](/oss/python/langchain/studio#setup-local-agent-server)与 LangGraph 兼容。然后，将您的代码推送到仓库。
+您的应用程序代码必须位于 GitHub 仓库中才能在 LangSmith 上部署。公共和私有仓库都支持。对于此快速入门，首先确保您的应用通过遵循[本地服务器设置指南(https://docs.langchain.com/oss/python/langchain/studio#setup-local-agent-server)与 LangGraph 兼容。然后，将您的代码推送到仓库。
 
 ### 2. 部署到 LangSmith
 
@@ -102,5 +102,6 @@ curl -s --request POST \
 ```
 
 LangSmith 提供额外的托管选项，包括自托管和混合托管。更多信息，请参阅[平台设置概述](https://docs.langchain.com/langsmith/platform-setup)。
+
 
 

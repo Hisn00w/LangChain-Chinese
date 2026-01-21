@@ -1,6 +1,6 @@
-# 自定义工作流
+﻿# 自定义工作流
 
-在**自定义工作流**架构中，您使用 [LangGraph](/oss/python/langgraph/overview) 定义自己的自定义执行流。您可以完全控制图结构——包括顺序步骤、条件分支、循环和并行执行。
+在**自定义工作流**架构中，您使用 [LangGraph(https://docs.langchain.com/oss/python/langgraph/overview) 定义自己的自定义执行流。您可以完全控制图结构——包括顺序步骤、条件分支、循环和并行执行。
 
 {% raw %}
 ```mermaid
@@ -24,13 +24,13 @@ graph LR
 
 当标准模式（子智能体、技能等）不符合您的需求时，使用自定义工作流，当您需要将确定性逻辑与智能体行为混合时，或您的用例需要复杂路由或多阶段处理时。
 
-工作流中的每个节点可以是一个简单的函数、LLM 调用或带有[工具](/oss/python/langchain/tools)的整个[智能体](/oss/python/langchain/agents)。您也可以在自定义工作流中组合其他架构——例如，将多智能体系统嵌入作为单个节点。
+工作流中的每个节点可以是一个简单的函数、LLM 调用或带有[工具(https://docs.langchain.com/oss/python/langchain/tools)的整个[智能体(https://docs.langchain.com/oss/python/langchain/agents)。您也可以在自定义工作流中组合其他架构——例如，将多智能体系统嵌入作为单个节点。
 
 有关自定义工作流的完整示例，请参阅下面的教程。
 
 **教程：使用路由构建多源知识库**
 
-[路由器模式](/oss/python/langchain/multi-agent/router) 是自定义工作流的一个例子。本教程逐步介绍构建一个并行查询 GitHub、Notion 和 Slack 的路由器，然后合成结果。
+[路由器模式(https://docs.langchain.com/oss/python/langchain/multi-agent/router) 是自定义工作流的一个例子。本教程逐步介绍构建一个并行查询 GitHub、Notion 和 Slack 的路由器，然后合成结果。
 
 >
 
@@ -63,13 +63,13 @@ workflow = (
 
 ## 示例：RAG 流程
 
-一个常见的用例是将[检索](/oss/python/langchain/retrieval)与智能体结合。此示例构建了一个从知识库检索并可以获取实时新闻的 WNBA 统计助手。
+一个常见的用例是将[检索(https://docs.langchain.com/oss/python/langchain/retrieval)与智能体结合。此示例构建了一个从知识库检索并可以获取实时新闻的 WNBA 统计助手。
 
 **自定义 RAG 工作流：**
 
 该工作流演示了三种类型的节点：
 
-* **模型节点**（重写）：使用[结构化输出](/oss/python/langchain/structured-output)重写用户查询以获得更好的检索。
+* **模型节点**（重写）：使用[结构化输出(https://docs.langchain.com/oss/python/langchain/structured-output)重写用户查询以获得更好的检索。
 * **确定性节点**（检索）：执行向量相似性搜索——不涉及 LLM。
 * **智能体节点**（智能体）：对检索到的上下文进行推理，并可以通过工具获取额外信息。
 
@@ -175,4 +175,5 @@ workflow = (
 result = workflow.invoke({"question": "谁赢得了 2024 年 WNBA 总冠军？"})
 print(result["answer"])
 ```
+
 

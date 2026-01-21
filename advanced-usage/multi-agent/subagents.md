@@ -1,6 +1,6 @@
-# 子智能体
+﻿# 子智能体
 
-在**子智能体**架构中，一个中央主[智能体](/oss/python/langchain/agents)（通常称为**监督者**）通过将子智能体作为[工具](/oss/python/langchain/tools)调用来协调它们。主智能体决定调用哪个子智能体、提供什么输入以及如何组合结果。子智能体是无状态的——它们不记住过去的交互，所有对话记忆都由主智能体维护。这提供了[上下文](/oss/python/langchain/context-engineering)隔离：每次子智能体调用都在干净的上下文窗口中工作，防止主对话中的上下文膨胀。
+在**子智能体**架构中，一个中央主[智能体(https://docs.langchain.com/oss/python/langchain/agents)（通常称为**监督者**）通过将子智能体作为[工具(https://docs.langchain.com/oss/python/langchain/tools)调用来协调它们。主智能体决定调用哪个子智能体、提供什么输入以及如何组合结果。子智能体是无状态的——它们不记住过去的交互，所有对话记忆都由主智能体维护。这提供了[上下文(https://docs.langchain.com/oss/python/langchain/context-engineering)隔离：每次子智能体调用都在干净的上下文窗口中工作，防止主对话中的上下文膨胀。
 
 ```mermaid
 graph LR
@@ -17,20 +17,20 @@ graph LR
 ## 关键特征
 
 * **集中控制**：所有路由都通过主智能体
-* **无直接用户交互**：子智能体将结果返回给主智能体，而不是用户（尽管您可以在子智能体内使用[中断](/oss/python/langgraph/human-in-the-loop#interrupt)来允许用户交互）
+* **无直接用户交互**：子智能体将结果返回给主智能体，而不是用户（尽管您可以在子智能体内使用[中断(https://docs.langchain.com/oss/python/langgraph/human-in-the-loop#interrupt)来允许用户交互）
 * **通过工具调用子智能体**：子智能体通过工具被调用
 * **并行执行**：主智能体可以在单轮中调用多个子智能体
 
 <Note>
-  **监督者 vs. 路由器**：监督者智能体（此模式）与[路由器](/oss/python/langchain/multi-agent/router)不同。监督者是一个完整的智能体，维护对话上下文并在多轮中动态决定调用哪些子智能体。路由器通常是单个分类步骤，在不维护持续对话状态的情况下将请求分派给智能体。
+  **监督者 vs. 路由器**：监督者智能体（此模式）与[路由器(https://docs.langchain.com/oss/python/langchain/multi-agent/router)不同。监督者是一个完整的智能体，维护对话上下文并在多轮中动态决定调用哪些子智能体。路由器通常是单个分类步骤，在不维护持续对话状态的情况下将请求分派给智能体。
 </Note>
 
 ## 使用场景
 
-当您有多个不同的领域（例如日历、电子邮件、CRM、数据库），子智能体不需要直接与用户对话，或者您想要集中式工作流控制时，使用子智能体模式。对于只有少量[工具](/oss/python/langchain/tools)的更简单情况，请使用[单个智能体](/oss/python/langchain/agents)。
+当您有多个不同的领域（例如日历、电子邮件、CRM、数据库），子智能体不需要直接与用户对话，或者您想要集中式工作流控制时，使用子智能体模式。对于只有少量[工具(https://docs.langchain.com/oss/python/langchain/tools)的更简单情况，请使用[单个智能体(https://docs.langchain.com/oss/python/langchain/agents)。
 
 <Tip>
-  **需要在子智能体内进行用户交互？** 虽然子智能体通常将结果返回给主智能体而不是直接与用户对话，但您可以在子智能体内使用[中断](/oss/python/langgraph/human-in-the-loop#interrupt)来暂停执行并收集用户输入。当子智能体在继续之前需要澄清或批准时，这很有用。主智能体保持编排者角色，但子智能体可以在任务中间从用户那里收集信息。
+  **需要在子智能体内进行用户交互？** 虽然子智能体通常将结果返回给主智能体而不是直接与用户对话，但您可以在子智能体内使用[中断(https://docs.langchain.com/oss/python/langgraph/human-in-the-loop#interrupt)来暂停执行并收集用户输入。当子智能体在继续之前需要澄清或批准时，这很有用。主智能体保持编排者角色，但子智能体可以在任务中间从用户那里收集信息。
 </Tip>
 
 ## 基本实现
@@ -228,7 +228,7 @@ graph LR
 * **单个任务工具**：一个参数化工具，可以按名称调用任何注册的子智能体
 * **基于约定的调用**：按名称选择智能体，任务作为人类消息传递，最终消息作为工具结果返回
 * **团队分布**：不同团队可以独立开发和部署智能体
-* **智能体发现**：子智能体可以通过系统提示（列出可用的智能体）或通过[渐进式披露](/oss/python/langchain/multi-agent/skills-sql-assistant)（通过工具按需加载智能体信息）被发现
+* **智能体发现**：子智能体可以通过系统提示（列出可用的智能体）或通过[渐进式披露(https://docs.langchain.com/oss/python/langchain/multi-agent/skills-sql-assistant)（通过工具按需加载智能体信息）被发现
 
 <Tip>
   这种方法的一个有趣方面是子智能体可能具有与主智能体完全相同的能力。在这种情况下，调用子智能体**实际上是关于上下文隔离**作为主要原因——允许复杂的多步骤任务在隔离的上下文窗口中运行，而不使主智能体的对话历史膨胀。子智能体自主完成其工作并仅返回简洁的摘要，保持主线程专注和高效。
@@ -299,7 +299,7 @@ main_agent = create_agent(
 | [**子智能体输入**](#子智能体输入) | 确保子智能体能够使用优化的上下文良好执行 | 子智能体性能 |
 | [**子智能体输出**](#子智能体输出) | 确保监督者能够对子智能体结果采取行动 | 主智能体性能 |
 
-另请参阅我们关于智能体[上下文工程](/oss/python/langchain/context-engineering)的综合指南。
+另请参阅我们关于智能体[上下文工程(https://docs.langchain.com/oss/python/langchain/context-engineering)的综合指南。
 
 ### 子智能体规范
 
@@ -346,7 +346,7 @@ def call_subagent1(query: str, runtime: ToolRuntime[None, CustomState]):
 自定义主智能体接收回什么以便它能够做出好的决策。有两种策略：
 
 1. **提示子智能体**：准确指定应该返回什么。常见的失败模式是子智能体执行工具调用或推理，但不在其最终消息中包含结果——提醒它监督者只看到最终输出。
-2. **在代码中格式化**：在返回之前调整或丰富响应。例如，使用 [`Command`](/oss/python/langgraph/graph-api#command) 将特定状态键与最终文本一起传回。
+2. **在代码中格式化**：在返回之前调整或丰富响应。例如，使用 [`Command`(https://docs.langchain.com/oss/python/langgraph/graph-api#command) 将特定状态键与最终文本一起传回。
 
 ```python
 from typing import Annotated
@@ -377,4 +377,5 @@ def call_subagent1(
         ]
     })
 ```
+
 

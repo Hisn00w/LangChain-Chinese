@@ -1,8 +1,8 @@
-# LangSmith 可观测性
+﻿# LangSmith 可观测性
 
-当您使用 LangChain 构建和运行智能体时，您需要了解它们的行为：它们调用哪些[工具](/oss/python/langchain/tools)、生成什么提示，以及如何做出决策。使用 [`create_agent`](https://reference.langchain.com/python/langchain/agents/#langchain.agents.create_agent) 构建的 LangChain 智能体自动支持通过 [LangSmith](/langsmith/home) 进行追踪，这是一个用于捕获、调试、评估和监控 LLM 应用程序行为的平台。
+当您使用 LangChain 构建和运行智能体时，您需要了解它们的行为：它们调用哪些[工具(https://docs.langchain.com/oss/python/langchain/tools)、生成什么提示，以及如何做出决策。使用 [`create_agent`](https://reference.langchain.com/python/langchain/agents/#langchain.agents.create_agent) 构建的 LangChain 智能体自动支持通过 [LangSmith(https://docs.smith.langchain.com/home) 进行追踪，这是一个用于捕获、调试、评估和监控 LLM 应用程序行为的平台。
 
-[*追踪*](/langsmith/observability-concepts#traces) 记录您智能体执行的每个步骤，从初始用户输入到最终响应，包括所有工具调用、模型交互和决策点。这些执行数据帮助您调试问题、评估不同输入的性能，并监控生产中的使用模式。
+[*追踪*(https://docs.smith.langchain.com/observability-concepts#traces) 记录您智能体执行的每个步骤，从初始用户输入到最终响应，包括所有工具调用、模型交互和决策点。这些执行数据帮助您调试问题、评估不同输入的性能，并监控生产中的使用模式。
 
 本指南向您展示如何为您的 LangChain 智能体启用追踪并使用 LangSmith 分析其执行。
 
@@ -11,7 +11,7 @@
 在开始之前，请确保您具备以下条件：
 
 * **一个 LangSmith 账户**：在 [smith.langchain.com](https://smith.langchain.com) 注册（免费）或登录。
-* **一个 LangSmith API 密钥**：请遵循[创建 API 密钥](/langsmith/create-account-api-key#create-an-api-key)指南。
+* **一个 LangSmith API 密钥**：请遵循[创建 API 密钥(https://docs.smith.langchain.com/create-account-api-key#create-an-api-key)指南。
 
 ## 启用追踪
 
@@ -126,5 +126,6 @@ with ls.tracing_context(
 此自定义元数据和标签将附加到 LangSmith 中的追踪。
 
 要了解有关如何使用追踪来调试、评估和监控您的智能体的更多信息，请参阅 [LangSmith 文档](https://docs.langchain.com/langsmith/home)。
+
 
 

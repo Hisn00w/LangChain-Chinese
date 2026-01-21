@@ -1,4 +1,4 @@
-# 概述
+﻿# 概述
 
 > 从智能体运行中流式传输实时更新
 
@@ -294,12 +294,12 @@ for stream_mode, chunk in agent.stream(  # [!code highlight]
 
 您可能希望同时流式传输：
 
-1. 工具调用生成时的部分 JSON（[工具调用](/oss/python/langchain/models#tool-calling)）
+1. 工具调用生成时的部分 JSON（[工具调用(https://docs.langchain.com/oss/python/langchain/models#tool-calling)）
 2. 执行的完整解析后的工具调用
 
-指定 [`stream_mode="messages"`](#llm-token) 将流式传输智能体中所有 LLM 调用生成的增量[消息块](/oss/python/langchain/messages#streaming-and-chunks)。要访问带有解析工具调用的完成消息：
+指定 [`stream_mode="messages"`](#llm-token) 将流式传输智能体中所有 LLM 调用生成的增量[消息块(https://docs.langchain.com/oss/python/langchain/messages#streaming-and-chunks)。要访问带有解析工具调用的完成消息：
 
-1. 如果这些消息被跟踪在[状态](/oss/python/langchain/agents#memory)中（如 [`create_agent`](/oss/python/langchain/agents) 的模型节点中），请使用 `stream_mode=["messages", "updates"]` 通过[状态更新](#智能体进度)访问完成的消息（如下面演示）。
+1. 如果这些消息被跟踪在[状态(https://docs.langchain.com/oss/python/langchain/agents#memory)中（如 [`create_agent`(https://docs.langchain.com/oss/python/langchain/agents) 的模型节点中），请使用 `stream_mode=["messages", "updates"]` 通过[状态更新](#智能体进度)访问完成的消息（如下面演示）。
 2. 如果这些消息没有被跟踪在状态中，请使用[自定义更新](#自定义更新)或在流式传输循环期间聚合块（[下一节](#访问完成的消息)）。
 
 <Note>
@@ -367,12 +367,12 @@ for stream_mode, data in agent.stream(
 #### 访问完成的消息
 
 <Note>
-  如果完成的消息被跟踪在智能体的[状态](/oss/python/langchain/agents#memory)中，您可以使用 `stream_mode=["messages", "updates"]` 如上所述[](#流式传输工具调用)在流式传输期间访问完成的消息。
+  如果完成的消息被跟踪在智能体的[状态(https://docs.langchain.com/oss/python/langchain/agents#memory)中，您可以使用 `stream_mode=["messages", "updates"]` 如上所述[](#流式传输工具调用)在流式传输期间访问完成的消息。
 </Note>
 
 在某些情况下，完成的消息不会反映在[状态更新](#智能体进度)中。如果您可以访问智能体内部，可以使用[自定义更新](#自定义更新)在流式传输期间访问这些消息。否则，您可以在流式传输循环中聚合消息块（见下文）。
 
-考虑下面的例子，我们将[流式写入器](#自定义更新)整合到一个简化的[护栏中间件](/oss/python/langchain/guardrails#after-agent-guardrails)中。该中间件演示了工具调用以生成"安全/不安全"的结构化评估（您也可以为此使用[结构化输出](/oss/python/langchain/models#structured-output)）：
+考虑下面的例子，我们将[流式写入器](#自定义更新)整合到一个简化的[护栏中间件(https://docs.langchain.com/oss/python/langchain/guardrails#after-agent-guardrails)中。该中间件演示了工具调用以生成"安全/不安全"的结构化评估（您也可以为此使用[结构化输出(https://docs.langchain.com/oss/python/langchain/models#structured-output)）：
 
 ```python  theme={null}
 from typing import Any, Literal
@@ -524,11 +524,11 @@ for stream_mode, data in agent.stream(
 
 ### 带人工介入的流式传输
 
-要处理人工介入[中断](/oss/python/langchain/human-in-the-loop)，我们基于上面的[示例](#流式传输工具调用)构建：
+要处理人工介入[中断(https://docs.langchain.com/oss/python/langchain/human-in-the-loop)，我们基于上面的[示例](#流式传输工具调用)构建：
 
-1. 我们使用[人工介入中间件和检查点](/oss/python/langchain/human-in-the-loop#configuring-interrupts)配置智能体
+1. 我们使用[人工介入中间件和检查点(https://docs.langchain.com/oss/python/langchain/human-in-the-loop#configuring-interrupts)配置智能体
 2. 我们收集 `"updates`" 流式传输模式中产生的中断
-3. 我们用[命令](/oss/python/langchain/human-in-the-loop#responding-to-interrupts)响应这些中断
+3. 我们用[命令(https://docs.langchain.com/oss/python/langchain/human-in-the-loop#responding-to-interrupts)响应这些中断
 
 ```python  theme={null}
 from typing import Any
@@ -628,7 +628,7 @@ for stream_mode, data in agent.stream(
 参数: {'city': 'San Francisco'}
 ```
 
-接下来，我们为每个中断收集一个[决策](/oss/python/langchain/human-in-the-loop#interrupt-decision-types)。重要的是，决策的顺序必须与我们收集的动作顺序匹配。
+接下来，我们为每个中断收集一个[决策(https://docs.langchain.com/oss/python/langchain/human-in-the-loop#interrupt-decision-types)。重要的是，决策的顺序必须与我们收集的动作顺序匹配。
 
 为了说明，我们将编辑一个工具调用并接受另一个：
 
@@ -673,7 +673,7 @@ decisions
 }
 ```
 
-然后我们可以通过将[命令](/oss/python/langchain/human-in-the-loop#responding-to-interrupts)传递到同一个流式传输循环来恢复：
+然后我们可以通过将[命令(https://docs.langchain.com/oss/python/langchain/human-in-the-loop#responding-to-interrupts)传递到同一个流式传输循环来恢复：
 
 ```python  theme={null}
 interrupts = []
@@ -713,7 +713,7 @@ for stream_mode, data in agent.stream(
 
 1. 我们将工具替换为在内部调用智能体的 `call_weather_agent` 工具
 2. 我们为每个智能体添加一个 `name`
-3. 我们在创建流式传输时指定 [`subgraphs=True`](/oss/python/langgraph/use-subgraphs#stream-subgraph-outputs)
+3. 我们在创建流式传输时指定 [`subgraphs=True`(https://docs.langchain.com/oss/python/langgraph/use-subgraphs#stream-subgraph-outputs)
 4. 我们的流式传输处理与之前相同，但我们添加逻辑以使用 `create_agent` 的 `name` 参数跟踪当前活动的智能体
 
 <Tip>
@@ -837,9 +837,9 @@ for _, stream_mode, data in agent.stream(
 
 在某些应用程序中，您可能需要禁用给定模型的单个 token 流式传输。这在以下情况很有用：
 
-* 使用[多智能体](/oss/python/langchain/multi-agent)系统来控制哪些智能体流式传输其输出
+* 使用[多智能体(https://docs.langchain.com/oss/python/langchain/multi-agent)系统来控制哪些智能体流式传输其输出
 * 混合支持流式传输的模型和不支持的模型
-* 部署到 [LangSmith](/langsmith/home) 并希望防止某些模型输出流式传输到客户端
+* 部署到 [LangSmith(https://docs.smith.langchain.com/home) 并希望防止某些模型输出流式传输到客户端
 
 在初始化模型时设置 `streaming=False`。
 
@@ -860,14 +860,16 @@ model = ChatOpenAI(
   并非所有聊天模型集成都支持 `streaming` 参数。如果您的模型不支持，请改用 `disable_streaming=True`。此参数可通过基类在所有聊天模型上使用。
 </Note>
 
-更多详情请参阅 [LangGraph 流式传输指南](/oss/python/langgraph/streaming#disable-streaming-for-specific-chat-models)。
+更多详情请参阅 [LangGraph 流式传输指南(https://docs.langchain.com/oss/python/langgraph/streaming#disable-streaming-for-specific-chat-models)。
 
 ## 相关内容
 
 * [前端流式传输](frontend.md) — 使用 `useStream` 构建具有实时智能体交互功能的 React UI
-* [使用聊天模型进行流式传输](../core-components/models.md) — 直接从聊天模型流式传输 token，无需使用智能体或图
-* [带人工介入的流式传输](../advanced-usage/human-in-the-loop.md) — 在处理人工审查的中断时流式传输智能体进度
+* [使用聊天模型进行流式传输](../models.md) — 直接从聊天模型流式传输 token，无需使用智能体或图
+* [带人工介入的流式传输](../../advanced-usage/human-in-the-loop.md) — 在处理人工审查的中断时流式传输智能体进度
 * [LangGraph 流式传输](https://python.langchain.com/langgraph/streaming) — 高级流式传输选项，包括 `values`、`debug` 模式和子图流式传输
 
 ***
+
+
 

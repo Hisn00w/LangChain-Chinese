@@ -1,4 +1,4 @@
-
+﻿
 # 快速入门
 
 
@@ -23,7 +23,7 @@
 - 在终端中设置环境变量 `ANTHROPIC_API_KEY`
 
 尽管下面的示例使用的是 Claude，你也可以通过更换模型名称并配置对应的 API Key，来使用  
-[任意受支持的模型](../integrations/providers/overview.md)。
+[任意受支持的模型](https://docs.langchain.com/oss/python/integrations/providers/overview)。
 
 ---
 
@@ -96,9 +96,9 @@ use the get_user_location tool to find their location."""
 
 ### 步骤 2：创建工具
 
-[Tools](tools.md) 允许模型通过调用你定义的函数，与外部系统交互。
-工具可以依赖 [runtime context](runtime.md)，也可以与
-[agent memory](short-term-memory.md) 结合使用。
+[Tools](../core-components/tools.md) 允许模型通过调用你定义的函数，与外部系统交互。
+工具可以依赖 [runtime context](../advanced-usage/runtime.md)，也可以与
+[agent memory](../core-components/short-term-memory.md) 结合使用。
 
 下面示例展示了 `get_user_location` 如何使用 runtime context：
 
@@ -131,7 +131,7 @@ def get_user_location(runtime: ToolRuntime[Context]) -> str:
 
 ### 步骤 3：配置模型
 
-为你的用例配置合适的 [语言模型](models.md) 参数：
+为你的用例配置合适的 [语言模型](../core-components/models.md) 参数：
 
 ```python
 from langchain.chat_models import init_chat_model
@@ -169,7 +169,7 @@ class ResponseFormat:
 
 ### 步骤 5：添加记忆
 
-为 Agent 添加 [记忆能力](short-term-memory.md)，以在多轮对话中保持上下文状态：
+为 Agent 添加 [记忆能力](../core-components/short-term-memory.md)，以在多轮对话中保持上下文状态：
 
 ```python
 from langgraph.checkpoint.memory import InMemorySaver
@@ -293,4 +293,5 @@ agent = create_agent(
 * **在多轮对话中保持状态**
 
 的 AI Agent。
+
 

@@ -1,10 +1,10 @@
-# 工具
+﻿# 工具
 
-工具扩展了 [agents](/oss/python/langchain/agents) 的功能——让它们能够获取实时数据、执行代码、查询外部数据库，并在世界上采取行动。
+工具扩展了 [agents(https://docs.langchain.com/oss/python/langchain/agents) 的功能——让它们能够获取实时数据、执行代码、查询外部数据库，并在世界上采取行动。
 
-在底层，工具是具有明确定义输入和输出的可调用函数，它们被传递给[聊天模型](/oss/python/langchain/models)。模型根据对话上下文决定何时调用工具，以及提供什么输入参数。
+在底层，工具是具有明确定义输入和输出的可调用函数，它们被传递给[聊天模型(https://docs.langchain.com/oss/python/langchain/models)。模型根据对话上下文决定何时调用工具，以及提供什么输入参数。
 
-有关模型如何处理工具调用的详细信息，请参阅[工具调用](/oss/python/langchain/models#tool-calling)。
+有关模型如何处理工具调用的详细信息，请参阅[工具调用(https://docs.langchain.com/oss/python/langchain/models#tool-calling)。
 
 ## 创建工具
 
@@ -30,7 +30,7 @@ def search_database(query: str, limit: int = 10) -> str:
 
 **服务器端工具使用**
 
-一些聊天模型（例如 [OpenAI](/oss/python/integrations/chat/openai)、[Anthropic](/oss/python/integrations/chat/anthropic) 和 [Gemini](/oss/python/integrations/chat/google_generative_ai)）具有在服务器端执行的[内置工具](/oss/python/langchain/models#server-side-tool-use)，例如网络搜索和代码解释器。请参阅[提供商概述](/oss/python/integrations/providers/overview)以了解如何使用您的特定聊天模型访问这些工具。
+一些聊天模型（例如 [OpenAI(https://docs.langchain.com/oss/python/integrations/chat/openai)、[Anthropic(https://docs.langchain.com/oss/python/integrations/chat/anthropic) 和 [Gemini(https://docs.langchain.com/oss/python/integrations/chat/google_generative_ai)）具有在服务器端执行的[内置工具(https://docs.langchain.com/oss/python/langchain/models#server-side-tool-use)，例如网络搜索和代码解释器。请参阅[提供商概述(https://docs.langchain.com/oss/python/integrations/providers/overview)以了解如何使用您的特定聊天模型访问这些工具。
 
 ### 自定义工具属性
 
@@ -377,4 +377,5 @@ def get_weather(city: str, runtime: ToolRuntime) -> str:
     return f"It's always sunny in {city}!"
 ```
 
-如果您在工具中使用 `runtime.stream_writer`，则必须在 LangGraph 执行上下文中调用工具。更多详情请参阅[流式传输](/oss/python/langchain/streaming.md)。
+如果您在工具中使用 `runtime.stream_writer`，则必须在 LangGraph 执行上下文中调用工具。更多详情请参阅[流式传输(https://docs.langchain.com/oss/python/langchain/streaming.md)。
+

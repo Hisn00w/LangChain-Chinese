@@ -1,4 +1,4 @@
-# 测试
+﻿# 测试
 
 智能体应用让 LLM 自主决定下一步行动来解决问题。这种灵活性非常强大，但由于模型的黑盒特性，很难预测对智能体某一部分的调整会如何影响整体。
 
@@ -15,7 +15,7 @@
 
 ### 使用 GenericFakeChatModel
 
-[`GenericFakeChatModel`](/docs/core_components/chat_models/#genericfakechatmodel) 是一个轻量级的模拟聊天模型，适用于测试智能体组件而无需调用真实模型。
+[`GenericFakeChatModel`(https://docs.langchain.com/docs/core_components/chat_models/#genericfakechatmodel) 是一个轻量级的模拟聊天模型，适用于测试智能体组件而无需调用真实模型。
 
 **功能特点：**
 
@@ -551,6 +551,7 @@ def test_agent_trajectory():
 第一次运行此测试时，您的智能体会进行真正的网络调用，pytest 会在 `tests/cassettes` 目录中生成 cassette 文件 `test_agent_trajectory.yaml`。后续运行将使用该 cassette 来模拟真正的网络调用，前提是智能体的请求与上次运行相同。如果请求发生变化，测试将失败，您需要删除 cassette 并重新运行测试以记录新的交互。
 
 当您修改提示、添加新工具或更改预期轨迹时，保存的 cassette 将变得过时，现有测试**将失败**。您应该删除相应的 cassette 文件并重新运行测试以记录新的交互。
+
 
 
 

@@ -1,4 +1,4 @@
-# 结构化输出
+﻿# 结构化输出
 
 结构化输出允许 agent 以特定的、可预测的格式返回数据。您无需解析自然语言响应，而是获得 JSON 对象、[Pydantic 模型](https://docs.pydantic.dev/latest/concepts/models/#basic-model-usage) 或数据类形式的结构化数据，您的应用程序可以直接使用这些数据。
 
@@ -26,10 +26,10 @@ def create_agent(
 
 当直接提供模式类型时，LangChain 会自动选择：
 
-* 如果所选的模型和提供商支持原生结构化输出（例如 [OpenAI](/oss/python/integrations/providers/openai)、[Anthropic (Claude)](/oss/python/integrations/providers/anthropic) 或 [xAI (Grok)](/oss/python/integrations/providers/xAI)），则使用 `ProviderStrategy`
+* 如果所选的模型和提供商支持原生结构化输出（例如 [OpenAI(https://docs.langchain.com/oss/python/integrations/providers/openai)、[Anthropic (Claude)(https://docs.langchain.com/oss/python/integrations/providers/anthropic) 或 [xAI (Grok)(https://docs.langchain.com/oss/python/integrations/providers/xAI)），则使用 `ProviderStrategy`
 * 对于所有其他模型，使用 `ToolStrategy`
 
-如果使用 `langchain>=1.1`，原生结构化输出功能的支持会从模型的[配置文件数据](/oss/python/langchain/models#model-profiles)中动态读取。如果数据不可用，请使用其他条件或手动指定：
+如果使用 `langchain>=1.1`，原生结构化输出功能的支持会从模型的[配置文件数据(https://docs.langchain.com/oss/python/langchain/models#model-profiles)中动态读取。如果数据不可用，请使用其他条件或手动指定：
 
 ```python
 custom_profile = {
@@ -62,7 +62,7 @@ class ProviderStrategy(Generic[SchemaT]):
 | 参数 | 类型 | 描述 |
 |------|------|------|
 | `schema` | required | 定义结构化输出模式的模式。支持：<br>- **Pydantic 模型**：带字段验证的 `BaseModel` 子类。返回经过验证的 Pydantic 实例。<br>- **数据类**：带类型注释的 Python 数据类。返回字典。<br>- **TypedDict**：类型化字典类。返回字典。<br>- **JSON Schema**：带 JSON 模式规范的字典。返回字典。 |
-| `strict` | optional | 启用严格模式遵循的可选布尔参数。由某些提供商支持（例如 [OpenAI](/oss/python/integrations/chat/openai) 和 [xAI](/oss/python/integrations/chat/xai)）。默认为 `None`（禁用）。 |
+| `strict` | optional | 启用严格模式遵循的可选布尔参数。由某些提供商支持（例如 [OpenAI(https://docs.langchain.com/oss/python/integrations/chat/openai) 和 [xAI(https://docs.langchain.com/oss/python/integrations/chat/xai)）。默认为 `None`（禁用）。 |
 
 当您将模式类型直接传递给 [`create_agent.response_format`](https://reference.langchain.com/python/langchain/agents/#langchain.agents.create_agent\(response_format\)) 并且模型支持原生结构化输出时，LangChain 会自动使用 `ProviderStrategy`：
 
@@ -678,4 +678,5 @@ response_format = ToolStrategy(
     handle_errors=False  # All errors raised
 )
 ```
+
 

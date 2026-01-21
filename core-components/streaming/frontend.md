@@ -1,4 +1,4 @@
-# 前端
+﻿# 前端
 
 > 使用 LangChain 智能体、LangGraph 图和自定义 API 构建具有实时流式传输功能的生成式 UI
 
@@ -17,7 +17,7 @@
 
 ## 基本用法
 
-`useStream` 钩子连接到任何 LangGraph 图，无论是运行在您自己的端点还是使用 [LangSmith 部署](/langsmith/deployments) 部署的。
+`useStream` 钩子连接到任何 LangGraph 图，无论是运行在您自己的端点还是使用 [LangSmith 部署(https://docs.smith.langchain.com/deployments) 部署的。
 
 ```tsx
 import { useStream } from "@langchain/langgraph-sdk/react";
@@ -54,7 +54,7 @@ function Chat() {
 }
 ```
 
-了解如何[将您的智能体部署到 LangSmith](/oss/python/langchain/deploy)，以获得具有内置可观测性、身份验证和扩展的生产级托管。
+了解如何[将您的智能体部署到 LangSmith(https://docs.langchain.com/oss/python/langchain/deploy)，以获得具有内置可观测性、身份验证和扩展的生产级托管。
 
 **`useStream` 参数：**
 
@@ -876,7 +876,7 @@ export interface AgentState {
 
 ## 人工介入
 
-当智能体需要人工批准工具执行时处理中断。在[如何处理中断](/oss/python/langgraph/interrupts#pause-using-interrupt)指南中了解更多信息。
+当智能体需要人工批准工具执行时处理中断。在[如何处理中断(https://docs.langchain.com/oss/python/langgraph/interrupts#pause-using-interrupt)指南中了解更多信息。
 
 ```python
 from langchain import create_agent, tool, human_in_the_loop_middleware
@@ -1236,6 +1236,8 @@ export function getTextContent(message: Message): string {
 * [流式传输概述](overview.md) — 使用 LangChain 智能体的服务器端流式传输
 * [useStream API 参考](https://reference.langchain.com/javascript/functions/_langchain_langgraph-sdk.react.useStream.html) — 完整 API 文档
 * [智能体聊天 UI](https://python.langchain.com/ui) — LangChain 智能体的预构建聊天界面
-* [人工介入](../advanced-usage/human-in-the-loop.md) — 配置人工审查的中断
-* [多智能体系统](../advanced-usage/multi-agent/overview.md) — 使用多个 LLM 构建智能体
+* [人工介入](../../advanced-usage/human-in-the-loop.md) — 配置人工审查的中断
+* [多智能体系统](../../advanced-usage/multi-agent/overview.md) — 使用多个 LLM 构建智能体
+
+
 

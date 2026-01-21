@@ -1,14 +1,14 @@
-# 人工介入
+﻿# 人工介入
 
-人工介入（Human-in-the-Loop，HITL）[中间件](/oss/python/langchain/middleware/built-in#human-in-the-loop) 允许您向 agent 工具调用添加人工监督。当模型提出可能需要审查的操作时——例如，写入文件或执行 SQL——中间件可以暂停执行并等待决策。
+人工介入（Human-in-the-Loop，HITL）[中间件(https://docs.langchain.com/oss/python/langchain/middleware/built-in#human-in-the-loop) 允许您向 agent 工具调用添加人工监督。当模型提出可能需要审查的操作时——例如，写入文件或执行 SQL——中间件可以暂停执行并等待决策。
 
-它通过根据可配置策略检查每个工具调用来实现这一点。如果需要干预，中间件会发出一个[中断](https://reference.langchain.com/python/langgraph/types/#langgraph.types.interrupt)来停止执行。图状态使用 LangGraph 的[持久化层](/oss/python/langgraph/persistence)保存，因此执行可以安全暂停并在稍后恢复。
+它通过根据可配置策略检查每个工具调用来实现这一点。如果需要干预，中间件会发出一个[中断](https://reference.langchain.com/python/langgraph/types/#langgraph.types.interrupt)来停止执行。图状态使用 LangGraph 的[持久化层(https://docs.langchain.com/oss/python/langgraph/persistence)保存，因此执行可以安全暂停并在稍后恢复。
 
 然后由人工决策决定接下来发生什么：操作可以按原样批准（`approve`）、修改后运行（`edit`），或拒绝并提供反馈（`reject`）。
 
 ## 中断决策类型
 
-[中间件](/oss/python/langchain/middleware/built-in#human-in-the-loop) 定义了三种内置的人工响应中断的方式：
+[中间件(https://docs.langchain.com/oss/python/langchain/middleware/built-in#human-in-the-loop) 定义了三种内置的人工响应中断的方式：
 
 | 决策类型 | 描述 | 示例用例 |
 |----------|------|----------|
@@ -22,7 +22,7 @@
 
 ## 配置中断
 
-要使用 HITL，在创建 agent 时将[中间件](/oss/python/langchain/middleware/built-in#human-in-the-loop)添加到 agent 的 `middleware` 列表中。
+要使用 HITL，在创建 agent 时将[中间件(https://docs.langchain.com/oss/python/langchain/middleware/built-in#human-in-the-loop)添加到 agent 的 `middleware` 列表中。
 
 您可以使用工具操作到每个操作允许的决策类型的映射来配置它。当工具调用与映射中的操作匹配时，中间件将中断执行。
 
@@ -57,7 +57,7 @@ agent = create_agent(
 
 您必须配置检查点以在中断之间持久化图状态。在生产环境中，使用像 [`AsyncPostgresSaver`](https://reference.langchain.com/python/langgraph/checkpoints/#langgraph.checkpoint.postgres.aio.AsyncPostgresSaver) 这样的持久化检查点。对于测试或原型设计，使用 [`InMemorySaver`](https://reference.langchain.com/python/langgraph/checkpoints/#langgraph.checkpoint.memory.InMemorySaver)。
 
-调用 agent 时，传递一个包含**线程 ID**的 `config`，以将执行与对话线程关联。请参阅 [LangGraph 中断文档](/oss/python/langgraph/interrupts) 了解详细信息。
+调用 agent 时，传递一个包含**线程 ID**的 `config`，以将执行与对话线程关联。请参阅 [LangGraph 中断文档(https://docs.langchain.com/oss/python/langgraph/interrupts) 了解详细信息。
 
 **配置选项：**
 
@@ -244,7 +244,7 @@ for mode, chunk in agent.stream(
             print(token.content, end="", flush=True)
 ```
 
-有关流模式的更多详细信息，请参阅[流式传输](/oss/python/langchain/streaming)指南。
+有关流模式的更多详细信息，请参阅[流式传输(https://docs.langchain.com/oss/python/langchain/streaming)指南。
 
 ## 执行生命周期
 
@@ -258,7 +258,8 @@ for mode, chunk in agent.stream(
 
 ## 自定义 HITL 逻辑
 
-对于更专业的工作流程，您可以使用[中断](https://reference.langchain.com/python/langgraph/types/#langgraph.types.interrupt)原语和[中间件](/oss/python/langchain/middleware)抽象直接构建自定义 HITL 逻辑。
+对于更专业的工作流程，您可以使用[中断](https://reference.langchain.com/python/langgraph/types/#langgraph.types.interrupt)原语和[中间件(https://docs.langchain.com/oss/python/langchain/middleware)抽象直接构建自定义 HITL 逻辑。
 
 请参阅上面的[执行生命周期](#执行生命周期)了解如何将中断集成到 agent 的操作中。
+
 

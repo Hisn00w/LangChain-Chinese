@@ -1,4 +1,4 @@
-# 运行时
+﻿# 运行时
 
 ## 概述
 
@@ -7,7 +7,7 @@ LangChain 的 [`create_agent`](https://reference.langchain.com/python/langchain/
 LangGraph 暴露了一个 [`Runtime`](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime) 对象，包含以下信息：
 
 1. **上下文**：静态信息，如用户 ID、数据库连接或 agent 调用依赖项
-2. **存储**：用于[长期记忆](/oss/python/langchain/long-term-memory) 的 [BaseStore](https://reference.langchain.com/python/langgraph/store/#langgraph.store.base.BaseStore) 实例
+2. **存储**：用于[长期记忆(https://docs.langchain.com/oss/python/langchain/long-term-memory) 的 [BaseStore](https://reference.langchain.com/python/langgraph/store/#langgraph.store.base.BaseStore) 实例
 3. **流写入器**：通过 `"custom"` 流模式流式传输信息的对象
 
 运行时上下文为您的工具和中间件提供**依赖注入**。无需硬编码值或使用全局状态，您可以在调用 agent 时注入运行时依赖项（如数据库连接、用户 ID 或配置）。这使您的工具更易于测试、可重用和灵活。
@@ -48,7 +48,7 @@ agent.invoke(
 
 - 访问上下文
 - 读取或写入长期记忆
-- 写入[自定义流](/oss/python/langchain/streaming#custom-updates)（例如，工具进度/更新）
+- 写入[自定义流(https://docs.langchain.com/oss/python/langchain/streaming#custom-updates)（例如，工具进度/更新）
 
 使用 `ToolRuntime` 参数在工具内部访问 [`Runtime`](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime) 对象。
 
@@ -123,4 +123,5 @@ agent.invoke(
     context=Context(user_name="John Smith")
 )
 ```
+
 

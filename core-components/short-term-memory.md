@@ -1,4 +1,4 @@
-# 短期记忆
+﻿# 短期记忆
 
 ## 概述
 
@@ -12,7 +12,7 @@
 
 即使您的模型支持完整的上下文长度，大多数 LLM 在长上下文上仍然表现不佳。它们会被过时或离题的内容"分心"，同时还会遭受更慢的响应时间和更高成本的困扰。
 
-聊天模型使用[消息](/oss/python/langchain/messages)接受上下文，其中包括指令（系统消息）和输入（人类消息）。在聊天应用程序中，消息在人类输入和模型响应之间交替，形成一个随时间增长的消息列表。由于上下文窗口有限，许多应用程序可以从使用删除或"遗忘"过时信息的技术中受益。
+聊天模型使用[消息(https://docs.langchain.com/oss/python/langchain/messages)接受上下文，其中包括指令（系统消息）和输入（人类消息）。在聊天应用程序中，消息在人类输入和模型响应之间交替，形成一个随时间增长的消息列表。由于上下文窗口有限，许多应用程序可以从使用删除或"遗忘"过时信息的技术中受益。
 
 ## 使用方法
 
@@ -179,7 +179,7 @@ If you'd like me to call you a nickname or use a different name, just say the wo
 
 要从图状态中删除消息，可以使用 `RemoveMessage`。
 
-要使 `RemoveMessage` 工作，您需要使用带有 [`add_messages`](https://reference.langchain.com/python/langgraph/graphs/#langgraph.graph.message.add_messages) [reducer](/oss/python/langgraph/graph-api#reducers) 的状态键。
+要使 `RemoveMessage` 工作，您需要使用带有 [`add_messages`](https://reference.langchain.com/python/langgraph/graphs/#langgraph.graph.message.add_messages) [reducer(https://docs.langchain.com/oss/python/langgraph/graph-api#reducers) 的状态键。
 
 默认的 [`AgentState`](https://reference.langchain.com/python/langchain/agents/#langchain.agents.AgentState) 提供了这个功能。
 
@@ -267,7 +267,7 @@ for event in agent.stream(
 
 ![Summary](https://mintcdn.com/langchain-5e9cc07a/ybiAaBfoBvFquMDz/oss/images/summary.png)
 
-要在 agent 中总结消息历史，请使用内置的 [`SummarizationMiddleware`](/oss/python/langchain/middleware#summarization)：
+要在 agent 中总结消息历史，请使用内置的 [`SummarizationMiddleware`(https://docs.langchain.com/oss/python/langchain/middleware#summarization)：
 
 ```python
 from langchain.agents import create_agent
@@ -305,7 +305,7 @@ Your name is Bob!
 """
 ```
 
-有关更多配置选项，请参阅 [`SummarizationMiddleware`](/oss/python/langchain/middleware#summarization)。
+有关更多配置选项，请参阅 [`SummarizationMiddleware`(https://docs.langchain.com/oss/python/langchain/middleware#summarization)。
 
 ## 访问记忆
 
@@ -618,4 +618,5 @@ agent = create_agent(
     checkpointer=InMemorySaver(),
 )
 ```
+
 

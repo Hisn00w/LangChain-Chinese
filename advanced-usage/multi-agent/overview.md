@@ -1,4 +1,4 @@
-# 多智能体
+﻿# 多智能体
 
 多智能体系统协调专门的组件来处理复杂的工作流程。然而，并非每个复杂任务都需要这种方法——具有正确（有时是动态）工具和提示的单个智能体通常可以实现类似的结果。
 
@@ -10,10 +10,10 @@
 * **分布式开发**：允许不同团队独立开发和维护能力，将它们组合成具有清晰边界的大型系统。
 * **并行化**：为子任务生成专门的工作者并并发执行以获得更快的结果。
 
-当单个智能体有太多[工具](/oss/python/langchain/tools)并对使用哪些工具做出错误决策时，当任务需要具有广泛上下文（长提示和特定领域工具）的专门知识时，或者当您需要强制执行顺序约束以仅在满足某些条件后解锁功能时，多智能体模式特别有价值。
+当单个智能体有太多[工具(https://docs.langchain.com/oss/python/langchain/tools)并对使用哪些工具做出错误决策时，当任务需要具有广泛上下文（长提示和特定领域工具）的专门知识时，或者当您需要强制执行顺序约束以仅在满足某些条件后解锁功能时，多智能体模式特别有价值。
 
 <Tip>
-  多智能体设计的核心是[上下文工程](/oss/python/langchain/context-engineering)——决定每个智能体看到什么信息。您的系统质量取决于确保每个智能体都能访问其任务所需的正确数据。
+  多智能体设计的核心是[上下文工程(https://docs.langchain.com/oss/python/langchain/context-engineering)——决定每个智能体看到什么信息。您的系统质量取决于确保每个智能体都能访问其任务所需的正确数据。
 </Tip>
 
 ## 模式
@@ -22,11 +22,11 @@
 
 | 模式 | 工作方式 |
 | ---- | -------- |
-| [**子智能体**](/oss/python/langchain/multi-agent/subagents) | 主智能体将子智能体协调为工具。所有路由都通过主智能体，主智能体决定何时以及如何调用每个子智能体。 |
-| [**交接**](/oss/python/langchain/multi-agent/handoffs) | 行为根据状态动态变化。工具调用更新触发路由或配置更改的状态变量，切换智能体或调整当前智能体的工具和提示。 |
-| [**技能**](/oss/python/langchain/multi-agent/skills) | 按需加载专门的提示和知识。单个智能体保持控制，同时根据需要从技能加载上下文。 |
-| [**路由器**](/oss/python/langchain/multi-agent/router) | 路由步骤对输入进行分类并将其定向到一个或多个专门智能体。结果被合成为组合响应。 |
-| [**自定义工作流**](/oss/python/langchain/multi-agent/custom-workflow) | 使用 [LangGraph](/oss/python/langgraph/overview) 构建自定义执行流，混合确定性逻辑和智能体行为。将其他模式作为节点嵌入您的工作流中。 |
+| [**子智能体**(https://docs.langchain.com/oss/python/langchain/multi-agent/subagents) | 主智能体将子智能体协调为工具。所有路由都通过主智能体，主智能体决定何时以及如何调用每个子智能体。 |
+| [**交接**(https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs) | 行为根据状态动态变化。工具调用更新触发路由或配置更改的状态变量，切换智能体或调整当前智能体的工具和提示。 |
+| [**技能**(https://docs.langchain.com/oss/python/langchain/multi-agent/skills) | 按需加载专门的提示和知识。单个智能体保持控制，同时根据需要从技能加载上下文。 |
+| [**路由器**(https://docs.langchain.com/oss/python/langchain/multi-agent/router) | 路由步骤对输入进行分类并将其定向到一个或多个专门智能体。结果被合成为组合响应。 |
+| [**自定义工作流**(https://docs.langchain.com/oss/python/langchain/multi-agent/custom-workflow) | 使用 [LangGraph(https://docs.langchain.com/oss/python/langgraph/overview) 构建自定义执行流，混合确定性逻辑和智能体行为。将其他模式作为节点嵌入您的工作流中。 |
 
 ### 选择模式
 
@@ -81,7 +81,7 @@
 **关键指标：**
 
 * **模型调用**：LLM 调用次数。更多调用 = 更高的延迟（特别是如果是顺序的）和更高的每次请求 API 成本。
-* **处理的令牌数**：所有调用中的总[上下文窗口](/oss/python/langchain/context-engineering)使用。更多令牌 = 更高的处理成本和潜在的上下文限制。
+* **处理的令牌数**：所有调用中的总[上下文窗口(https://docs.langchain.com/oss/python/langchain/context-engineering)使用。更多令牌 = 更高的处理成本和潜在的上下文限制。
 
 ### 单次请求
 
@@ -239,4 +239,5 @@
 | 并行执行 | ✅ | | | ✅ |
 | 大上下文领域 | ✅ | | | ✅ |
 | 简单、专注的任务 | | | ✅ | |
+
 

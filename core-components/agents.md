@@ -1,4 +1,4 @@
-# Agents（智能体）
+﻿# Agents（智能体）
 
 Agents（智能体）将语言模型与[工具（tools）](./tools.md)结合，创建能够推理任务、决定使用哪些工具并迭代解决问题的系统。
 
@@ -22,9 +22,9 @@ graph TD
   class QUERY,ANSWER blueHighlight
 ```
 
-`create_agent` 使用 [LangGraph](./runtime.md) 构建一个基于图（graph）的智能体运行时。图由节点（步骤）和边（连接）组成，定义了智能体如何处理信息。智能体通过这个图移动，执行节点（如调用模型的模型节点、执行工具的工具节点或中间件）。
+`create_agent` 使用 [LangGraph](../advanced-usage/runtime.md) 构建一个基于图（graph）的智能体运行时。图由节点（步骤）和边（连接）组成，定义了智能体如何处理信息。智能体通过这个图移动，执行节点（如调用模型的模型节点、执行工具的工具节点或中间件）。
 
-了解更多关于[图 API](./runtime.md)。
+了解更多关于[图 API](../advanced-usage/runtime.md)。
 
 ## 核心组件
 
@@ -98,7 +98,7 @@ agent = create_agent(
 
 预绑定模型（已经调用了 `bind_tools` 的模型）在使用结构化输出时不受支持。如果需要带结构化输出的动态模型选择，请确保传递给中间件的模型不是预绑定的。
 
-有关模型配置详情，请参阅[模型](./models.md)。有关动态模型选择模式，请参阅[中间件中的动态模型](./middleware-overview.md)。
+有关模型配置详情，请参阅[模型](./models.md)。有关动态模型选择模式，请参阅[中间件中的动态模型](../middleware/overview.md)。
 
 ### 工具
 
@@ -279,7 +279,7 @@ result = agent.invoke(
 )
 ```
 
-有关消息类型和格式的更多详情，请参阅[消息](./messages.md)。有关完整的中间件文档，请参阅[中间件](./middleware-overview.md)。
+有关消息类型和格式的更多详情，请参阅[消息](./messages.md)。有关完整的中间件文档，请参阅[中间件](../middleware/overview.md)。
 
 ## 调用
 
@@ -291,7 +291,7 @@ result = agent.invoke(
 )
 ```
 
-要从智能体流式传输步骤和/或令牌，请参阅[流式输出](./streaming.md)指南。
+要从智能体流式传输步骤和/或令牌，请参阅[流式输出](./streaming/overview.md)指南。
 
 否则，智能体遵循 LangGraph 图 API，并支持所有相关方法，如 `stream` 和 `invoke`。
 
@@ -415,7 +415,7 @@ result = agent.invoke({
 
 通过中间件定义自定义状态优于通过 `create_agent` 上的 `state_schema` 定义，因为它允许你将状态扩展保持在相关中间件和工具的概念范围内。`state_schema` 在 `create_agent` 上仍支持向后兼容。
 
-要了解有关记忆的更多信息，请参阅[记忆](./short-term-memory.md)。有关实现跨会话持久化的长期记忆的信息，请参阅[长期记忆](./long-term-memory.md)。
+要了解有关记忆的更多信息，请参阅[记忆](./short-term-memory.md)。有关实现跨会话持久化的长期记忆的信息，请参阅[长期记忆](../advanced-usage/long-term-memory.md)。
 
 ### 流式输出
 
@@ -432,7 +432,7 @@ for chunk in agent.stream({
         print(f"调用工具: {[tc['name'] for tc in latest_message.tool_calls]}")
 ```
 
-有关流式输出的更多详情，请参阅[流式输出](./streaming.md)。
+有关流式输出的更多详情，请参阅[流式输出](./streaming/overview.md)。
 
 ### 中间件
 
@@ -446,6 +446,7 @@ for chunk in agent.stream({
 
 中间件无缝集成到智能体的执行中，允许你拦截和修改关键点的数据流，而无需更改核心智能体逻辑。
 
-有关完整的中间件文档，包括 `@before_model`、`@after_model` 和 `@wrap_tool_call` 等装饰器，请参阅[中间件](./middleware-overview.md)。
+有关完整的中间件文档，包括 `@before_model`、`@after_model` 和 `@wrap_tool_call` 等装饰器，请参阅[中间件](../middleware/overview.md)。
+
 
 

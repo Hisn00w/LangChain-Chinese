@@ -1,4 +1,4 @@
-# 模型上下文协议 (MCP)
+﻿# 模型上下文协议 (MCP)
 
 [模型上下文协议 (MCP)](https://modelcontextprotocol.io/introduction) 是一个开放协议，标准化了应用程序如何向 LLM 提供工具和上下文。LangChain 智能体可以使用 [`langchain-mcp-adapters`](https://github.com/langchain-ai/langchain-mcp-adapters) 库来使用 MCP 服务器上定义的工具。
 
@@ -225,7 +225,7 @@ async with client.session("server_name") as session:
 
 ### 工具
 
-[工具](https://modelcontextprotocol.io/docs/concepts/tools) 允许 MCP 服务器公开可执行函数，LLM 可以调用这些函数来执行操作——例如查询数据库、调用 API 或与外部系统交互。LangChain 将 MCP 工具转换为 LangChain [工具](/oss/python/langchain/tools)，使它们可以直接在任何 LangChain 智能体或工作流中使用。
+[工具](https://modelcontextprotocol.io/docs/concepts/tools) 允许 MCP 服务器公开可执行函数，LLM 可以调用这些函数来执行操作——例如查询数据库、调用 API 或与外部系统交互。LangChain 将 MCP 工具转换为 LangChain [工具(https://docs.langchain.com/oss/python/langchain/tools)，使它们可以直接在任何 LangChain 智能体或工作流中使用。
 
 #### 加载工具
 
@@ -244,7 +244,7 @@ agent = create_agent("claude-sonnet-4-5-20250929", tools)
 
 MCP 工具可以在人类可读的文本响应之外返回[结构化内容](https://modelcontextprotocol.io/specification/2025-03-26/server/tools#structured-content)。当工具需要返回机器可解析数据（如 JSON）以及显示给模型的文本时，这很有用。
 
-当 MCP 工具返回 `structuredContent` 时，适配器会将其包装在 [`MCPToolArtifact`](/docs/reference/langchain-mcp-adapters#MCPToolArtifact) 中并将其作为工具的产物返回。您可以使用 `ToolMessage` 上的 `artifact` 字段来访问它。您还可以使用[拦截器](#工具拦截器)来自动处理或转换结构化内容。
+当 MCP 工具返回 `structuredContent` 时，适配器会将其包装在 [`MCPToolArtifact`(https://docs.langchain.com/docs/reference/langchain-mcp-adapters#MCPToolArtifact) 中并将其作为工具的产物返回。您可以使用 `ToolMessage` 上的 `artifact` 字段来访问它。您还可以使用[拦截器](#工具拦截器)来自动处理或转换结构化内容。
 
 **从产物中提取结构化内容：**
 
@@ -294,7 +294,7 @@ client = MultiServerMCPClient({...}, tool_interceptors=[append_structured_conten
 
 #### 多模态工具内容
 
-MCP 工具可以在其响应中返回[多模态内容](https://modelcontextprotocol.io/specification/2025-03-26/server/tools#tool-result)（图像、文本等）。当 MCP 服务器返回包含多个部分的内容（例如文本和图像）时，适配器会将它们转换为 LangChain 的[标准内容块](/oss/python/langchain/messages#standard-content-blocks)。您可以通过 `ToolMessage` 上的 `content_blocks` 属性访问标准化表示：
+MCP 工具可以在其响应中返回[多模态内容](https://modelcontextprotocol.io/specification/2025-03-26/server/tools#tool-result)（图像、文本等）。当 MCP 服务器返回包含多个部分的内容（例如文本和图像）时，适配器会将它们转换为 LangChain 的[标准内容块(https://docs.langchain.com/oss/python/langchain/messages#standard-content-blocks)。您可以通过 `ToolMessage` 上的 `content_blocks` 属性访问标准化表示：
 
 ```python
 from langchain_mcp_adapters.client import MultiServerMCPClient
@@ -327,7 +327,7 @@ for message in result["messages"]:
 
 ### 资源
 
-[资源](https://modelcontextprotocol.io/docs/concepts/resources) 允许 MCP 服务器公开可供客户端读取的数据——例如文件、数据库记录或 API 响应。LangChain 将 MCP 资源转换为 [Blob](/docs/reference/langchain-core/documents#Blob) 对象，为处理文本和二进制内容提供统一接口。
+[资源](https://modelcontextprotocol.io/docs/concepts/resources) 允许 MCP 服务器公开可供客户端读取的数据——例如文件、数据库记录或 API 响应。LangChain 将 MCP 资源转换为 [Blob(https://docs.langchain.com/docs/reference/langchain-core/documents#Blob) 对象，为处理文本和二进制内容提供统一接口。
 
 #### 加载资源
 
@@ -349,7 +349,7 @@ for blob in blobs:
     print(blob.as_string())  # 对于文本内容
 ```
 
-您也可以直接对会话使用 [`load_mcp_resources`](/docs/reference/langchain-mcp-adapters#load_mcp_resources) 以获得更多控制：
+您也可以直接对会话使用 [`load_mcp_resources`(https://docs.langchain.com/docs/reference/langchain-mcp-adapters#load_mcp_resources) 以获得更多控制：
 
 ```python
 from langchain_mcp_adapters.client import MultiServerMCPClient
@@ -367,7 +367,7 @@ async with client.session("server_name") as session:
 
 ### 提示
 
-[提示](https://modelcontextprotocol.io/docs/concepts/prompts) 允许 MCP 服务器公开可被客户端检索和使用的可重用提示模板。LangChain 将 MCP 提示转换为[消息](/docs/concepts/messages)，使它们易于集成到基于聊天的工作流中。
+[提示](https://modelcontextprotocol.io/docs/concepts/prompts) 允许 MCP 服务器公开可被客户端检索和使用的可重用提示模板。LangChain 将 MCP 提示转换为[消息(https://docs.langchain.com/docs/concepts/messages)，使它们易于集成到基于聊天的工作流中。
 
 #### 加载提示
 
@@ -393,7 +393,7 @@ for message in messages:
     print(f"{message.type}: {message.content}")
 ```
 
-您也可以直接对会话使用 [`load_mcp_prompt`](/docs/reference/langchain-mcp-adapters#load_mcp_prompt) 以获得更多控制：
+您也可以直接对会话使用 [`load_mcp_prompt`(https://docs.langchain.com/docs/reference/langchain-mcp-adapters#load_mcp_prompt) 以获得更多控制：
 
 ```python
 from langchain_mcp_adapters.client import MultiServerMCPClient
@@ -417,7 +417,7 @@ async with client.session("server_name") as session:
 
 ### 工具拦截器
 
-MCP 服务器作为独立进程运行——它们无法访问 LangGraph 运行时信息，如[存储](/oss/python/langgraph/persistence#memory-store)、[上下文](/oss/python/langchain/context-engineering)或智能体状态。**拦截器通过在 MCP 工具执行期间为您提供对此运行时上下文的访问来弥合这一差距。**
+MCP 服务器作为独立进程运行——它们无法访问 LangGraph 运行时信息，如[存储(https://docs.langchain.com/oss/python/langgraph/persistence#memory-store)、[上下文(https://docs.langchain.com/oss/python/langchain/context-engineering)或智能体状态。**拦截器通过在 MCP 工具执行期间为您提供对此运行时上下文的访问来弥合这一差距。**
 
 拦截器还提供类似中间件的工具调用控制：您可以修改请求、实现重试、动态添加标头，或完全短路执行。
 
@@ -598,7 +598,7 @@ client = MultiServerMCPClient(
 )
 ```
 
-有关更多上下文工程模式，请参阅[上下文工程](/oss/python/langchain/context-engineering)和[工具](/oss/python/langchain/tools)。
+有关更多上下文工程模式，请参阅[上下文工程(https://docs.langchain.com/oss/python/langchain/context-engineering)和[工具(https://docs.langchain.com/oss/python/langchain/tools)。
 
 #### 状态更新和命令
 
@@ -930,6 +930,7 @@ ElicitResult(action="cancel")
 * [MCP 文档](https://modelcontextprotocol.io/introduction)
 * [MCP 传输文档](https://modelcontextprotocol.io/docs/concepts/transports)
 * [`langchain-mcp-adapters`](https://github.com/langchain-ai/langchain-mcp-adapters)
+
 
 
 

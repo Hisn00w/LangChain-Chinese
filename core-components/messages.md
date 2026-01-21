@@ -1,4 +1,4 @@
-# 消息
+﻿# 消息
 
 消息是 LangChain 中模型上下文的基本单元。它们表示模型的输入和输出，携带与 LLM 交互时表示对话状态所需的内容和元数据。
 
@@ -259,7 +259,7 @@ for chunk in model.stream("Hi"):
 
 对于支持工具调用的模型，AI 消息可以包含工具调用。工具消息用于将单个工具执行的结果传递回模型。
 
-[工具](/oss/python/langchain/tools) 可以直接生成 [`ToolMessage`](https://reference.langchain.com/python/langchain/messages/#langchain.messages.ToolMessage) 对象。下面我们展示一个简单示例。详细内容请参阅工具指南。
+[工具(https://docs.langchain.com/oss/python/langchain/tools) 可以直接生成 [`ToolMessage`](https://reference.langchain.com/python/langchain/messages/#langchain.messages.ToolMessage) 对象。下面我们展示一个简单示例。详细内容请参阅工具指南。
 
 ```python
 from langchain.messages import AIMessage
@@ -367,7 +367,7 @@ human_message = HumanMessage(content_blocks=[
 
 LangChain 提供了一种跨提供商工作的消息内容的标准表示。
 
-消息对象实现了一个 `content_blocks` 属性，它将惰性地将 `content` 属性解析为标准的、类型安全的表示。例如，从 [`ChatAnthropic`](/oss/python/integrations/chat/anthropic) 或 [`ChatOpenAI`](/oss/python/integrations/chat/openai) 生成的消息将在各自提供商的格式中包含 `thinking` 或 `reasoning` 块，但可以惰性地解析为一致的 [`ReasoningContentBlock`](#content-block-reference) 表示：
+消息对象实现了一个 `content_blocks` 属性，它将惰性地将 `content` 属性解析为标准的、类型安全的表示。例如，从 [`ChatAnthropic`(https://docs.langchain.com/oss/python/integrations/chat/anthropic) 或 [`ChatOpenAI`(https://docs.langchain.com/oss/python/integrations/chat/openai) 生成的消息将在各自提供商的格式中包含 `thinking` 或 `reasoning` 块，但可以惰性地解析为一致的 [`ReasoningContentBlock`](#content-block-reference) 表示：
 
 **Anthropic：**
 
@@ -441,7 +441,7 @@ model = init_chat_model("gpt-5-nano", output_version="v1")
 
 额外键可以包含在内容块的顶层或嵌套在 `"extras": {"key": value}` 中。
 
-例如，[OpenAI](/oss/python/integrations/chat/openai#pdfs) 和 [AWS BedRock Converse](/oss/python/integrations/chat/bedrock) 需要 PDF 的文件名。请参阅您所选模型的提供商页面了解具体细节。
+例如，[OpenAI(https://docs.langchain.com/oss/python/integrations/chat/openai#pdfs) 和 [AWS BedRock Converse(https://docs.langchain.com/oss/python/integrations/chat/bedrock) 需要 PDF 的文件名。请参阅您所选模型的提供商页面了解具体细节。
 
 **图像输入：**
 
@@ -782,4 +782,5 @@ message = {
 
 * 用于保留和管理对话历史的内置功能
 * 管理上下文窗口的策略，包括修剪和总结消息
+
 

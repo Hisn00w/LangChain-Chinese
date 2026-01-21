@@ -1,4 +1,4 @@
-# 自定义中间件
+﻿# 自定义中间件
 
 通过实现在智能体执行流程的特定点运行的钩子来构建自定义中间件。
 
@@ -604,8 +604,9 @@ def add_cached_context(
 ## 其他资源
 
 - [中间件 API 参考](https://reference.langchain.com/python/langchain/middleware/)
-- [内置中间件](/oss/python/langchain/middleware/built-in)
-- [测试智能体](/oss/python/langchain/test)
+- [内置中间件(https://docs.langchain.com/oss/python/langchain/middleware/built-in)
+- [测试智能体(https://docs.langchain.com/oss/python/langchain/test)
 
 ---
+
 
