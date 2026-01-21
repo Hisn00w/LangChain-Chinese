@@ -300,8 +300,4 @@ graph LR
 
 **混合 RAG** 的示例，结合了代理式推理与检索和自我纠正。
 
----
-
-> 在 [GitHub](https://github.com/langchain-ai/docs/edit/main/src/oss/langchain/retrieval.mdx) 上编辑此页面或[提交问题](https://github.com/langchain-ai/docs/issues/new/choose)。
-
 

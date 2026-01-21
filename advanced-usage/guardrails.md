@@ -400,8 +400,8 @@ agent = create_agent(
 
 ## 其他资源
 
-- [中间件文档](/oss/python/langchain/middleware) — 自定义中间件的完整指南
+- [中间件文档](../middleware/overview.md) — 自定义中间件的完整指南
 - [中间件 API 参考](https://reference.langchain.com/python/langchain/middleware/) — 自定义中间件的完整指南
-- [人工介入](/oss/python/langchain/human-in-the-loop) — 为敏感操作添加人工审查
-- [测试 agent](/oss/python/langchain/test) — 测试安全机制的策略
+- [人工介入](human-in-the-loop.md) — 为敏感操作添加人工审查
+- [测试 agent](../agent-development/test.md) — 测试安全机制的策略
 

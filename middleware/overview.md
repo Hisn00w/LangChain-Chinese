@@ -33,10 +33,10 @@ agent = create_agent(
 
 ## 附加资源
 
-- [内置中间件](/oss/python/langchain/middleware/built-in)
-- [自定义中间件](/oss/python/langchain/middleware/custom)
+- [内置中间件](built-in-middleware.md)
+- [自定义中间件](custom-middleware.md)
 - [中间件 API 参考](https://reference.langchain.com/python/langchain/middleware/)
-- [测试智能体](/oss/python/langchain/test)
+- [测试智能体](../agent-development/test.md)
 
 ---
 

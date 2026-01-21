@@ -250,8 +250,8 @@ for chunk in model.stream("Hi"):
 
 了解更多：
 
-* [从聊天模型流式传输 token](/oss/python/langchain/models#stream)
-* [从 agent 流式传输 token 和/或步骤](/oss/python/langchain/streaming)
+* [从聊天模型流式传输 token](models.md#stream)
+* [从 agent 流式传输 token 和/或步骤](./streaming/overview.md)
 
 ---
 
@@ -437,7 +437,7 @@ model = init_chat_model("gpt-5-nano", output_version="v1")
 
 **多模态** 是指处理不同形式数据的能力，如文本、音频、图像和视频。LangChain 包含这些数据的标准类型，可以跨提供商使用。
 
-[聊天模型](/oss/python/langchain/models) 可以接受多模态数据作为输入并生成多模态输出。下面我们展示包含多模态数据的输入消息的简短示例。
+[聊天模型](models.md) 可以接受多模态数据作为输入并生成多模态输出。下面我们展示包含多模态数据的输入消息的简短示例。
 
 额外键可以包含在内容块的顶层或嵌套在 `"extras": {"key": value}` 中。
 
@@ -776,7 +776,7 @@ message = {
 
 ## 与聊天模型一起使用
 
-[聊天模型](/oss/python/langchain/models) 接受一系列消息对象作为输入，并返回 [`AIMessage`](https://reference.langchain.com/python/langchain/messages/#langchain.messages.AIMessage) 作为输出。交互通常是无状态的，因此简单的对话循环涉及使用不断增长的消息列表调用模型。
+[聊天模型](models.md) 接受一系列消息对象作为输入，并返回 [`AIMessage`](https://reference.langchain.com/python/langchain/messages/#langchain.messages.AIMessage) 作为输出。交互通常是无状态的，因此简单的对话循环涉及使用不断增长的消息列表调用模型。
 
 请参阅以下指南了解更多信息：
 

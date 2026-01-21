@@ -724,9 +724,9 @@ agent = create_agent(
 
 ## 相关资源
 
-- [上下文概念概述](/oss/python/concepts/context) — 了解上下文类型以及何时使用它们
-- [中间件](/oss/python/langchain/middleware) — 完整中间件指南
-- [工具](/oss/python/langchain/tools) — 工具创建和上下文访问
-- [记忆](/oss/python/concepts/memory) — 短期和长期记忆模式
-- [Agent](/oss/python/langchain/agents) — 核心 agent 概念
+- [上下文概念概述](https://python.langchain.com/docs/concepts/context) — 了解上下文类型以及何时使用它们
+- [中间件](../middleware/overview.md) — 完整中间件指南
+- [工具](../core-components/tools.md) — 工具创建和上下文访问
+- [记忆](long-term-memory.md) — 短期和长期记忆模式
+- [Agent](../core-components/agents.md) — 核心 agent 概念
 
