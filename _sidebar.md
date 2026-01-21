@@ -1,50 +1,50 @@
 - LangChain
-  - [Overview](overview.md)
+  - [概览](overview.md)
 
-  - Get started
-    - [Overview](get-started/index.md)
-    - [Install](get-started/install.md)
-    - [Quickstart](get-started/quickstart.md)
-    - [Changelog](get-started/changelog.md)
-    - [Philosophy](get-started/philosophy.md)
+  - 开始使用
+    - [概览](get-started/index.md)
+    - [安装](get-started/install.md)
+    - [快速开始](get-started/quickstart.md)
+    - [更新日志](get-started/changelog.md)
+    - [设计理念](get-started/philosophy.md)
 
-  - Core components
-    - [Agents](core-components/agents.md)
-    - [Models](core-components/models.md)
-    - [Messages](core-components/messages.md)
-    - [Tools](core-components/tools.md)
-    - [Short-term memory](core-components/short-term-memory.md)
-    - Streaming
-      - [Overview](core-components/streaming/overview.md)
-      - [Frontend](core-components/streaming/frontend.md)
-    - [Structured output](core-components/structured-output.md)
+  - 核心组件
+    - [智能体](core-components/agents.md)
+    - [模型](core-components/models.md)
+    - [消息](core-components/messages.md)
+    - [工具](core-components/tools.md)
+    - [短期记忆](core-components/short-term-memory.md)
+    - 流式输出
+      - [概览](core-components/streaming/overview.md)
+      - [前端](core-components/streaming/frontend.md)
+    - [结构化输出](core-components/structured-output.md)
 
-  - Middleware
-    - [Overview](middleware/overview.md)
-    - [Built-in middleware](middleware/built-in-middleware.md)
-    - [Custom middleware](middleware/custom-middleware.md)
+  - 中间件
+    - [概览](middleware/overview.md)
+    - [内置中间件](middleware/built-in-middleware.md)
+    - [自定义中间件](middleware/custom-middleware.md)
 
-  - Advanced usage
-    - [Guardrails](advanced-usage/guardrails.md)
-    - [Runtime](advanced-usage/runtime.md)
-    - [Context engineering](advanced-usage/context-engineering.md)
-    - [Model Context Protocol (MCP)](advanced-usage/mcp.md)
-    - [Human-in-the-loop](advanced-usage/human-in-the-loop.md)
-    - Multi-agent
-      - [Overview](advanced-usage/multi-agent/overview.md)
-      - [Subagents](advanced-usage/multi-agent/subagents.md)
-      - [Handoffs](advanced-usage/multi-agent/handoffs.md)
-      - [Skills](advanced-usage/multi-agent/skills.md)
-      - [Router](advanced-usage/multi-agent/router.md)
-      - [Custom workflow](advanced-usage/multi-agent/custom-workflow.md)
-    - [Retrieval](advanced-usage/retrieval.md)
-    - [Long-term memory](advanced-usage/long-term-memory.md)
+  - 高级用法
+    - [安全防护](advanced-usage/guardrails.md)
+    - [运行时](advanced-usage/runtime.md)
+    - [上下文工程](advanced-usage/context-engineering.md)
+    - [模型上下文协议（MCP）](advanced-usage/mcp.md)
+    - [人机协作](advanced-usage/human-in-the-loop.md)
+    - 多智能体
+      - [概览](advanced-usage/multi-agent/overview.md)
+      - [子智能体](advanced-usage/multi-agent/subagents.md)
+      - [交接](advanced-usage/multi-agent/handoffs.md)
+      - [技能](advanced-usage/multi-agent/skills.md)
+      - [路由](advanced-usage/multi-agent/router.md)
+      - [自定义流程](advanced-usage/multi-agent/custom-workflow.md)
+    - [检索](advanced-usage/retrieval.md)
+    - [长期记忆](advanced-usage/long-term-memory.md)
 
-  - Agent development
+  - 智能体开发
     - [LangSmith Studio](agent-development/langsmith-studio.md)
-    - [Test](agent-development/test.md)
-    - [Agent Chat UI](agent-development/agent-chat-ui.md)
+    - [测试](agent-development/test.md)
+    - [智能体聊天界面](agent-development/agent-chat-ui.md)
 
-  - Deploy with LangSmith
-    - [Deployment](deploy-with-langsmith/deployment.md)
-    - [Observability](deploy-with-langsmith/observability.md)
+  - 使用 LangSmith 部署
+    - [部署](deploy-with-langsmith/deployment.md)
+    - [可观测性](deploy-with-langsmith/observability.md)
